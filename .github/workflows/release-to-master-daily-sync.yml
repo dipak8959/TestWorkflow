@@ -22,7 +22,7 @@ jobs:
       - name: Find latest release branch
         id: find-branch
         run: |
-          LATEST_BRANCH=$(git branch -r | grep 'release/' | sort -V | tail -n 1 | sed 's|origin/||')
+          LATEST_BRANCH=$(git branch -r | grep 'release/' | sort -V | tail -n 1 | sed 's|origin/||' | xargs)
           echo "LATEST_BRANCH=$LATEST_BRANCH"
           echo "LATEST_BRANCH=$LATEST_BRANCH" >> $GITHUB_ENV
           
